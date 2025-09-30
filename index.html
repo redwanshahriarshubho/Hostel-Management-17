@@ -3,49 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostel Management 17</title>
+    <meta name="description" content="Hostel Management 17 - Your home away from home in Bashundhara, Dhaka, Bangladesh">
+    <meta name="keywords" content="Hostel, Dhaka, Bashundhara, Room Availability, Student Accommodation, Bangladesh">
+    <meta name="author" content="Hostel Management 17">
+    
+    <!-- Google Fonts for professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#121212',
+                        'dark-surface': '#1e1e1e',
+                        'dark-accent': '#bb86fc',
+                        'dark-text': '#e0e0e0',
+                        'dark-secondary': '#b0b0b0',
+                        'dark-hero': '#2d3748'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    
+    <title>Hostel Management 17</title>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50 font-roboto transition-colors duration-300">
     <!-- Navigation Bar -->
-    <nav class="bg-teal-600 text-white p-4 sticky top-0 shadow-md">
+    <nav class="bg-teal-600 text-white p-4 sticky top-0 shadow-md z-50">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">Hostel Management 17</h1>
-            <ul class="flex space-x-6">
-                <li><a href="#" class="hover:text-gray-200">Home</a></li>
-                <li><a href="#notices" class="hover:text-gray-200">Notices</a></li>
-                <li><a href="#rooms" class="hover:text-gray-200">Room Availability</a></li>
-                <li><a href="#contact" class="hover:text-gray-200">Contact</a></li>
-            </ul>
+            <div class="flex items-center space-x-6">
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-dark-accent transition">Home</a></li>
+                    <li><a href="#notices" class="hover:text-dark-accent transition">Notices</a></li>
+                    <li><a href="#rooms" class="hover:text-dark-accent transition">Room Availability</a></li>
+                    <li><a href="#contact" class="hover:text-dark-accent transition">Contact</a></li>
+                </ul>
+                <button id="themeToggle" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-700 transition">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-teal-500 to-blue-600 text-white py-20 flex items-center justify-center">
+    <section class="bg-gradient-to-r from-dark-hero to-gray-800 text-white py-20 flex items-center justify-center transition-colors duration-300">
         <div class="text-center">
             <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Welcome to Hostel Management 17</h2>
-            <p class="text-lg md:text-xl mb-6">Your home away from home, managed with care.</p>
-            <a href="#notices" class="bg-white text-teal-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">View Notices</a>
+            <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto">Your home away from home, managed with care in Bashundhara, Dhaka.</p>
+            <a href="#notices" class="bg-dark-accent text-dark-bg px-6 py-3 rounded-full font-semibold hover:bg-purple-500 transition btn-hover">View Notices</a>
         </div>
     </section>
 
     <!-- Notices Section -->
-    <section id="notices" class="py-12 bg-white">
+    <section id="notices" class="py-12 bg-white transition-colors duration-300">
         <div class="container mx-auto px-4">
-            <h3 class="text-3xl font-bold text-center mb-8">Hostel Notices</h3>
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-8">Hostel Notices</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold mb-2">Mess Schedule Update</h4>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition fade-in">
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Mess Schedule Update</h4>
                     <p class="text-gray-700 mb-4">New mess timings: Breakfast 7-9 AM, Dinner 7-9 PM starting October 1, 2025.</p>
-                    <button class="read-btn bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700" data-id="1">Mark as Read</button>
+                    <button class="read-btn bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition btn-hover" data-id="1">Mark as Read</button>
                     <span class="read-status text-sm text-gray-500 hidden ml-2">Read</span>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold mb-2">Room Cleaning</h4>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition fade-in">
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Room Cleaning</h4>
                     <p class="text-gray-700 mb-4">Weekly cleaning scheduled for October 3, 2025, 10 AM - 2 PM.</p>
-                    <button class="read-btn bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700" data-id="2">Mark as Read</button>
+                    <button class="read-btn bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition btn-hover" data-id="2">Mark as Read</button>
                     <span class="read-status text-sm text-gray-500 hidden ml-2">Read</span>
                 </div>
             </div>
@@ -53,26 +89,29 @@
     </section>
 
     <!-- Room Availability Section -->
-    <section id="rooms" class="py-12 bg-gray-50">
+    <section id="rooms" class="py-12 bg-gray-50 transition-colors duration-300">
         <div class="container mx-auto px-4">
-            <h3 class="text-3xl font-bold text-center mb-8">Room Availability</h3>
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-8">Room Availability</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold mb-2">Single Room</h4>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition fade-in">
+                    <img src="" alt="Single Room" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Single Room</h4>
                     <p class="text-gray-700">Status: Available</p>
-                    <p class="text-gray-700">Price: 24,000.00 TK/month</p>
+                    <p class="text-gray-700">Price: ৳24,000/month</p>
                     <p class="text-gray-700">Details: Private room with attached bathroom.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold mb-2">Double Sharing</h4>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition fade-in">
+                    <img src="" alt="Double Sharing Room" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Double Sharing</h4>
                     <p class="text-gray-700">Status: Available</p>
-                    <p class="text-gray-700">Price: 14,400.00 TK/month per person</p>
+                    <p class="text-gray-700">Price: ৳14,400/month per person</p>
                     <p class="text-gray-700">Details: Shared room with study desk.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold mb-2">Dormitory</h4>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition fade-in">
+                    <img src="" alt="Dormitory" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h4 class="text-xl font-semibold mb-2 text-gray-800">Dormitory</h4>
                     <p class="text-gray-700">Status: Full</p>
-                    <p class="text-gray-700">Price: 9,600.00 TK/month per person</p>
+                    <p class="text-gray-700">Price: ৳9,600/month per person</p>
                     <p class="text-gray-700">Details: 6-bed dorm with shared facilities.</p>
                 </div>
             </div>
@@ -80,19 +119,29 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 bg-white">
+    <section id="contact" class="py-12 bg-white transition-colors duration-300">
         <div class="container mx-auto px-4 text-center">
-            <h3 class="text-3xl font-bold mb-8">Contact Us</h3>
+            <h3 class="text-3xl font-bold mb-8 text-gray-800">Contact Us</h3>
             <p class="text-gray-700 mb-4">Reach out to the Hostel Management 17 team:</p>
-            <p class="text-gray-700">Email: contact@hostel17.com</p>
-            <p class="text-gray-700">Phone: +123-456-7890</p>
-            <p class="text-gray-700">Address: 17 Hostel Road, Campus City</p>
+            <ul class="text-gray-700 space-y-2">
+                <li class="flex items-center justify-center"><i class="fas fa-envelope mr-2"></i> contact@hostel17.com</li>
+                <li class="flex items-center justify-center"><i class="fas fa-phone mr-2"></i> 01401445752</li>
+                <li class="flex items-center justify-center"><i class="fas fa-map-marker-alt mr-2"></i> 123 Bashundhara, Dhaka, Bangladesh</li>
+            </ul>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-teal-600 text-white p-4 text-center">
-        <p>&copy; 2025 Hostel Management 17. All rights reserved.</p>
+    <footer class="bg-dark-surface text-dark-text p-4 text-center transition-colors duration-300">
+        <div class="container mx-auto">
+            <p class="text-dark-secondary">Hostel Management 17 - Your home away from home in Dhaka.</p>
+            <div class="flex justify-center space-x-4 my-4">
+                <a href="#" class="text-dark-secondary hover:text-dark-accent"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-dark-secondary hover:text-dark-accent"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-dark-secondary hover:text-dark-accent"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2025 Hostel Management 17. All rights reserved.</p>
+        </div>
     </footer>
 
     <!-- JavaScript -->
